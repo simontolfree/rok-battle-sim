@@ -4,7 +4,143 @@
     "name": "Aethelflaed",
     "title": "Lady of the Mercians",
     "tier": "Legendary",
-    "commanderType": {"red": "Leadership","blue":"Support","yellow":"Peacekeeping"}
+    "commanderType": {
+      "red": "Leadership",
+      "blue": "Support",
+      "yellow": "Peacekeeping"
+    },
+    "commanderTalents": {
+      "activeSkill": {
+        "name": "Arrow of Iron",
+        "rageRequirement": 1000,
+        "text": "Deals Damage to up to 5 targets in a forward-facing fan-shaped area (Damage Factor 800), reducing thir attack, defence and health by 30% for the next 2 seconds",
+        "upgrade": [
+          {
+            "name": "direct damage factor",
+            "bonus": [
+              400,
+              500,
+              600,
+              700,
+              800
+            ],
+            "type": "number"
+          },
+          {
+            "name": "Attack, Defense and Health Reduction",
+            "bonus": [
+              10,
+              15,
+              20,
+              25,
+              30
+            ],
+            "type": "percent"
+          }
+        ]
+      },
+      "passiveSkills": [
+        {
+          "name": "Thunderous Force",
+          "text": "Troops led by this commander take 20% less counterattack damage. Their attacks have a 10% chance to inflict Slow-down on the target, reducing its cavalry units' march speed by 50% and other units' march speed by 30% for 3 seconds",
+          "upgrade": [
+            {
+              "name": "Counterattack Damage Taken Reduction",
+              "bonus": [
+                5,
+                8,
+                11,
+                15,
+                20
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Cavalry March Speed Reduction",
+              "bonus": [
+                20,
+                25,
+                30,
+                40,
+                50
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Other Unit March Speed Reduction",
+              "bonus": [
+                10,
+                15,
+                20,
+                25,
+                30
+              ],
+              "type": "percent"
+            }
+          ]
+        },
+        {
+          "name": "Synergy",
+          "text": "Troops led by this commander deal 35% increased damage to barbarians. Both commanders gain 35% increased experience ",
+          "upgrade": [
+            {
+              "name": "Bonus Damage to Barbarians",
+              "bonus": [
+                5,
+                10,
+                17,
+                25,
+                35
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Experience Bonus",
+              "bonus": [
+                5,
+                10,
+                17,
+                25,
+                35
+              ],
+              "type": "percent"
+            }
+
+          ]
+        },
+        {
+          "name": "Fortress of Merica",
+          "text": "When this commander leads a rally attack, the rallied troop capacity is increased by 10%. When troops led by ths commander consist of 3 or more different unit types, troops gain 20% increased attack",
+          "upgrade": [
+            {
+              "name": "Rallied Army Capacity Bonus",
+              "bonus": [
+                2,
+                4,
+                6,
+                8,
+                10
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Attack Bonus",
+              "bonus": [
+                5,
+                8,
+                11,
+                15,
+                20
+              ],
+              "type": "percent"
+            }
+
+          ]
+        }
+      ]
+
+    }
+
   },
   {
     "id": "2",
@@ -14,15 +150,224 @@
     "red": "Infantry",
     "yellow": "Garrison",
     "blue": "Defense",
-    "commanderType": {"red": "Infantry","blue":"Defense","yellow":"Garrison"}
+    "commanderType": {
+      "red": "Infantry",
+      "blue": "Defense",
+      "yellow": "Garrison"
+    },
+    "commanderTalents": {
+      "activeSkill": {
+        "name": "Soul of the Crusaders",
+        "rageRequirement": 1000,
+        "text": "Heals a portion of slighly wounded units led by this commander (Healing Factor 1400), and debuffs up to 5 enemy troops in a fan-shaped area, reducing their damage by 30% and their march speed by 15% for 2 seconds",
+        "upgrade": [
+          {
+            "name": "Healing Factor",
+            "bonus": [
+              600,
+              800,
+              1000,
+              1200,
+              1400
+            ],
+            "type": "number"
+          },
+          {
+            "name": "Damage Reduction",
+            "bonus": [
+              10,
+              15,
+              20,
+              25,
+              30
+            ],
+            "type": "percent"
+          },
+          {
+            "name": "March Speed Reduction",
+            "bonus": [
+              5,
+              7,
+              9,
+              12,
+              15
+            ],
+            "type": "percent"
+          }
+        ]
+      },
+      "passiveSkills": [
+        {
+          "name": "Chivalry",
+          "text": "Troops led by this commander gain 10% increased counterattack damage",
+          "upgrade": [
+            {
+              "name": "Damage Taken Reduction By",
+              "bonus": [
+                5,
+                7,
+                9,
+                12,
+                15
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Counterattack Damage Bonus",
+              "bonus": [
+                4,
+                5,
+                6,
+                8,
+                10
+              ],
+              "type": "percent"
+            }
 
+          ]
+        },
+        {
+          "name": "The Lionheart",
+          "text": "Infantry units led by this commander gain 15% increased attack and 15% increased defence",
+          "upgrade": [
+            {
+              "name": "Infantry Attack Bonus",
+              "bonus": [
+                5,
+                7,
+                9,
+                12,
+                15
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Infantry Defence Bonus",
+              "bonus": [
+                5,
+                7,
+                9,
+                12,
+                15
+              ],
+              "type": "percent"
+            }
+          ]
+        },
+        {
+          "name": "Battle-Hardened",
+          "text": "Troops led by this commander receive 30% increased healing effects,and take 30% less damage from watchtowers",
+          "upgrade": [
+            {
+              "name": "Healing Effect Enhancement",
+              "bonus": [
+                10,
+                15,
+                20,
+                25,
+                30
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Damage Taken From Watchtowers Reduced By",
+              "bonus": [
+                10,
+                15,
+                20,
+                25,
+                30
+              ],
+              "type": "percent"
+            }
+          ]
+        }
+      ]
+    }
   },
   {
     "id": "3",
     "name": "Yi Seong-Gye",
     "title": "Bow of Revolution",
     "tier": "Legendary",
-    "commanderType": {"red": "Archer","blue":"Skill","yellow":"Garrison"}
+    "commanderType": {
+      "red": "Archer",
+      "blue": "Skill",
+      "yellow": "Garrison"
+    },
+    "commanderTalents": {
+      "activeSkill": {
+        "name": "Arrow of Iron",
+        "rageRequirement": 1000,
+        "text": "Deals Damage to up to 5 targets in a forward-facing fan-shaped area (Damage Factor 800), reducing thir attack, defence and health by 30% for the next 2 seconds",
+        "upgrade": [
+          {
+            "name": "direct damage factor",
+            "bonus": [
+              400,
+              500,
+              600,
+              700,
+              800
+            ],
+            "type": "number"
+          },
+          {
+            "name": "Attack, Defense and Health Reduction",
+            "bonus": [
+              10,
+              15,
+              20,
+              25,
+              30
+            ],
+            "type": "percent"
+          }
+        ]
+      },
+      "passiveSkills": [
+        {
+          "name": "Thunderous Force",
+          "text": "Troops led by this commander take 20% less counterattack damage. Their attacks have a 10% chance to inflict Slow-down on the target, reducing its cavalry units' march speed by 50% and other units' march speed by 30% for 3 seconds",
+          "upgrade": [
+            {
+              "name": "Counterattack Damage Taken Reduction",
+              "bonus": [
+                5,
+                8,
+                11,
+                15,
+                20
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Cavalry March Speed Reduction",
+              "bonus": [
+                20,
+                25,
+                30,
+                40,
+                50
+              ],
+              "type": "percent"
+            },
+            {
+              "name": "Other Unit March Speed Reduction",
+              "bonus": [
+                10,
+                15,
+                20,
+                25,
+                30
+              ],
+              "type": "percent"
+            }
+          ]
+        }
+      ]
+    }
+
   }
 ]
 
