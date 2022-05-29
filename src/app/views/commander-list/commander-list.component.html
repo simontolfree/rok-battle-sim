@@ -20,7 +20,9 @@
             </th>
             <th>Name</th>
             <th>Talents</th>
-            <th>Skills</th>
+            <th>Active Skill</th>
+            <th>Passive Skills</th>
+
           </tr>
           </thead>
           <tbody>
@@ -43,9 +45,23 @@
               <strong>{{ user.commanderType.yellow }}</strong>
             </td>
             <td>
-              <strong>{{ user.commanderType.red }}</strong><br>
-              <strong>{{ user.commanderType.blue }}</strong><br>
-              <strong>{{ user.commanderType.yellow }}</strong>
+              <strong>{{ user.commanderTalents.activeSkill.name}}</strong><br>
+              <span class="text-danger">{{ user.commanderTalents.activeSkill.rageRequirement}}</span><br>
+              {{ user.commanderTalents.activeSkill.text}}<br>
+              <div *ngFor="let skill of user.commanderTalents.activeSkill.upgrade">{{skill.name}} <span
+                *ngFor="let bonus of skill.bonus"> {{bonus}}</span> <br></div>
+
+
+            </td>
+            <td>
+              <ng-container *ngFor="let passiveSkill of user.commanderTalents.passiveSkills">
+                <strong>{{ passiveSkill.name}}</strong><br>
+                {{ passiveSkill.text}}<br>
+                <div *ngFor="let skill of passiveSkill.upgrade">{{skill.name}} <span
+                  *ngFor="let bonus of skill.bonus"> {{bonus}}</span> <br></div>
+
+              </ng-container>
+            </td>
           </tr>
           </tbody>
         </table>
