@@ -14,6 +14,8 @@ export interface Commander {
   name:string,
   talentTreetreeData:object;
   commanderType:CommanderType;
+  commanderTalents:{"activeSkill": ActiveSkill, "passiveSkills": PassiveSkills[]};
+
   /*
   TODO:
   Create array of the 3 talent types. ie. blue,yellow to leaship etc
@@ -28,6 +30,24 @@ export interface CommanderType {
   red: string,
   yellow: string,
   blue: string,
+}
+export interface ActiveSkill {
+  name: string,
+  rageRequirement: number,
+  text: string,
+  upgrade:SkillDetails[]
+}
+export interface PassiveSkills {
+  name: string,
+  text: string,
+  blue: string,
+  upgrade:SkillDetails[]
+
+}
+export interface SkillDetails {
+  name: string,
+  bonus: [],
+  type: string,
 }
 @Injectable({
   providedIn: 'root'
