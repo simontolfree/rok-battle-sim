@@ -21,10 +21,12 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 
 import { WidgetsModule } from '../widgets/widgets.module';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
     DashboardRoutingModule,
+    HttpClientModule,
     CardModule,
     NavModule,
     IconModule,
