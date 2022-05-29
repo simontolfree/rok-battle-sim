@@ -32,7 +32,8 @@
             "preserveSymlinks": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/data"
             ],
             "styles": [
               "src/scss/styles.scss"

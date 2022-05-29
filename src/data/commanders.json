@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Aethelflaed",
+    "title": "Lady of the Mercians",
+    "tier": "Legendary",
+    "commanderType": {"red": "Leadership","blue":"Support","yellow":"Peacekeeping"}
+  },
+  {
+    "id": "2",
+    "name": "Richard I",
+    "title": "The Lion Heart",
+    "tier": "Legendary",
+    "red": "Infantry",
+    "yellow": "Garrison",
+    "blue": "Defense",
+    "commanderType": {"red": "Infantry","blue":"Defense","yellow":"Garrison"}
+
+  },
+  {
+    "id": "3",
+    "name": "Yi Seong-Gye",
+    "title": "Bow of Revolution",
+    "tier": "Legendary",
+    "commanderType": {"red": "Archer","blue":"Skill","yellow":"Garrison"}
+  }
+]
+
