@@ -41,6 +41,7 @@ export interface PassiveSkills {
   name: string,
   text: string,
   blue: string,
+  rageRequirement: number,
   upgrade:SkillDetails[]
 
 }
