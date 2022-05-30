@@ -29,7 +29,13 @@
   <div class="box d" *ngIf="selectedComms !==null">
     <div class="box e">e</div>
     <div class="box f">
+      <ng-container *ngFor="let passiveSkill of selectedComms.commanderTalents.passiveSkills">
+        <strong>{{ passiveSkill.name}}</strong><br>
+        {{ passiveSkill.text}}<br>
+        <div *ngFor="let skill of passiveSkill.upgrade">{{skill.name}} <span
+          *ngFor="let bonus of skill.bonus"> {{bonus}}</span> <br></div>
 
+      </ng-container>
     </div>
     <div class="box g">G</div>
   </div>
