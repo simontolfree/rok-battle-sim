@@ -29,6 +29,8 @@ export class CommanderListComponent implements OnInit {
               private commanderService: CommandersService
   ) {
     this.commandersList$ =   this.commanderService.getCommanders();
+    // @ts-ignore
+    this.selectedComms=null;
     console.log(this.commandersList$);
   }
 
@@ -37,6 +39,7 @@ export class CommanderListComponent implements OnInit {
   public trafficRadioGroup = new FormGroup({
     trafficRadio: new FormControl('Month')
   });
+  selectedComms: Commander ;
 
   ngOnInit(): void {
     this.initCharts();

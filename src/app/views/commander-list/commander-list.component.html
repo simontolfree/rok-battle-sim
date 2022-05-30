@@ -1,3 +1,40 @@
+<div class="wrapper">
+
+
+</div>
+
+
+<div class="wrapper-grid">
+  <div class="box a"></div>
+  <div class="box b">B</div>
+  <div class="box c">
+    <div class="wrapper2">
+
+
+      <div class="box2" *ngFor="let comm of commandersList$ | async" (click)="selectedComms  = comm ">
+
+        <c-card class="mb-4">
+          <c-card-body>
+            <c-avatar
+              size="md"
+              src="assets/images/commanders/{{ comm.name }}.png"
+              status="{{ comm.red }}"
+            ></c-avatar>
+            {{comm.name }}
+          </c-card-body>
+        </c-card>
+      </div>
+    </div>
+  </div>
+  <div class="box d" *ngIf="selectedComms !==null">
+    <div class="box e">e</div>
+    <div class="box f">
+
+    </div>
+    <div class="box g">G</div>
+  </div>
+</div>
+
 <c-row>
   <c-col xs>
     <c-card class="mb-4">
