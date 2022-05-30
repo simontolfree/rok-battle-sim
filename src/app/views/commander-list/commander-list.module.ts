@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {
   AvatarModule,
@@ -40,7 +40,8 @@ import {CommanderListRoutingModule} from "./commander-list-routing.module";
     ChartjsModule,
     AvatarModule,
     TableModule,
-    WidgetsModule
+    WidgetsModule,
+    FormsModule
   ],
   declarations: [CommanderListComponent]
 })
