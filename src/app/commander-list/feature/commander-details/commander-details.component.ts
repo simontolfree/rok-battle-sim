@@ -1,4 +1,4 @@
-import { ActiveSkill, Commander, PassiveSkills, CommandersService } from './../../services/commanders.service';
+import { ActiveSkill, Commander, PassiveSkills, CommandersService } from '../../../services/commanders.service';
 import {Component, Input, OnInit} from '@angular/core';
 import {Observable, Subject} from "rxjs";
 

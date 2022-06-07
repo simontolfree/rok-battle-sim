@@ -23,12 +23,12 @@ const routes: Routes = [
       {
         path: 'commander-list',
         loadChildren: () =>
-          import('./commander-list/commander-list.module').then((m) => m.CommanderListModule)
+          import('./commander-list/ui/commander-list.module').then((m) => m.CommanderListModule)
       },
       {
         path: 'battle-sim',
         loadChildren: () =>
-          import('./battle-sim/battle-sim.module').then((m) => m.BattleSimComponentModule)
+          import('./battle-sim/ui/battle-sim.module').then((m) => m.BattleSimComponentModule)
       },
       {
         path: 'pages',

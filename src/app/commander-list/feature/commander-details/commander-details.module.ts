@@ -1,4 +1,4 @@
-import { AvatarModule, CardModule } from '@coreui/angular';
+import { CardModule, AvatarModule } from '@coreui/angular';
 import { CommanderDetailsComponent } from './commander-details.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';

@@ -1,6 +1,9 @@
+import { CommanderListComponent } from './commander-list.component';
+import { WidgetsModule } from './../../shared/widgets/widgets.module';
+import { CommanderDetailsModule } from './../feature/commander-details/commander-details.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {
   AvatarModule,
@@ -14,22 +17,15 @@ import {
   TableModule,
   TabsModule
 } from '@coreui/angular';
-import { IconModule } from '@coreui/icons-angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
-
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { DashboardComponent } from './dashboard.component';
-
-import { WidgetsModule } from '../widgets/widgets.module';
-import {HttpClientModule} from "@angular/common/http";
+import {CommanderListRoutingModule} from "./commander-list-routing.module";
 
 @NgModule({
   imports: [
-    DashboardRoutingModule,
-    HttpClientModule,
+    CommanderListRoutingModule,
+    CommanderDetailsModule,
     CardModule,
     NavModule,
-    IconModule,
     TabsModule,
     CommonModule,
     GridModule,
@@ -42,9 +38,10 @@ import {HttpClientModule} from "@angular/common/http";
     ChartjsModule,
     AvatarModule,
     TableModule,
-    WidgetsModule
+    WidgetsModule,
+    FormsModule
   ],
-  declarations: [DashboardComponent]
+  declarations: [CommanderListComponent]
 })
-export class DashboardModule {
+export class CommanderListModule {
 }

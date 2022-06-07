@@ -1,9 +1,10 @@
-import { BattleListData } from './battle-sim-data';
+import { Commander, ActiveSkill, PassiveSkills } from './../../services/commanders.service';
+import { CommanderListData } from './../data-access/commander-list-data';
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 
-import {ActiveSkill, Commander, CommandersService, PassiveSkills} from "../services/commanders.service";
 import {Observable} from "rxjs";
+import { CommandersService } from 'src/app/services/commanders.service';
 
 interface opponent {
   troops: number;
@@ -26,13 +27,13 @@ interface Battle {
 }
 
 @Component({
-  templateUrl: 'battle-sim.component.html',
-  styleUrls: ['battle-sim.component.scss'],
+  templateUrl: 'commander-list.component.html',
+  styleUrls: ['commander-list.component.scss'],
 })
-export class BattleSimComponent implements OnInit {
+export class CommanderListComponent implements OnInit {
   public commandersList$ : Observable<Commander[]> ;
 
-  constructor(private chartsData: BattleListData,
+  constructor(private chartsData: CommanderListData,
               private commanderService: CommandersService
   ) {
     this.battleLog=[];
@@ -80,7 +81,6 @@ export class BattleSimComponent implements OnInit {
     this.skillNumber=0;
   }
   public simulator: opponent;
-
   public trafficRadioGroup = new FormGroup({
     trafficRadio: new FormControl('Month')
   });
@@ -94,7 +94,6 @@ export class BattleSimComponent implements OnInit {
   }
 
   initCharts(): void {
-    //this.mainChart = this.chartsData.mainChart;
   }
 
   setTrafficPeriod(value: string): void {

@@ -1,4 +1,5 @@
-import { CommanderDetailsModule } from './../commander-list/commander-details/commander-details.module';
+import { CommanderDetailsModule } from './../../commander-list/feature/commander-details/commander-details.module';
+import { WidgetsModule } from './../../shared/widgets/widgets.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -16,10 +17,8 @@ import {
   TabsModule
 } from '@coreui/angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
-import { WidgetsModule } from '../shared/widgets/widgets.module';
 import {BattleSimComponent} from "./battle-sim.component";
 import { BattleSimComponentRoutingModule } from './battle-sim-routing.module';
-import { CommanderDetailsComponent } from '../commander-list/commander-details/commander-details.component';
 
 @NgModule({
   imports: [
