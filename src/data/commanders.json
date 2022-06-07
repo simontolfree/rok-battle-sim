@@ -286,6 +286,93 @@
     }
   },
   {
+    "id": "10",
+    "name": "City Keeper",
+    "title": "Shield of the People",
+    "tier": "Advanced",
+    "red": "Infantry",
+    "yellow": "Versatility",
+    "blue": "Attack",
+    "commanderType": {
+      "red": "Infantry",
+      "blue": "Attack",
+      "yellow": "Versatility"
+    },
+    "commanderTalents": {
+      "activeSkill": {
+        "name": "Hard Shield",
+        "rageRequirement": 1000,
+        "text": "Troops led by this commander gain 15% increased defence for 5 seconds",
+        "upgrade": [
+          {
+            "name": "Defence Bonus",
+            "bonus": [
+              3,
+              6,
+              9,
+              12,
+              15
+            ],
+            "type": "percent"
+          }
+        ]
+      },
+      "passiveSkills": [
+        {
+          "name": "Vitality",
+          "text": "Infantry units led by this commander gain 5% increased health",
+          "upgrade": [
+            {
+              "name": "Infantry Health Bonus",
+              "bonus": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "type": "percent"
+            }
+          ]
+        },
+        {
+          "name": "Sharp Blade",
+          "text": "Infantry units led by this commander gain 5% increased attack",
+          "upgrade": [
+            {
+              "name": "Infantry Attack Bonus",
+              "bonus": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "type": "percent"
+            }
+          ]
+        },
+        {
+          "name": "Resilient",
+          "text": "Infantry units led by this commander gain 5% increased defence",
+          "upgrade": [
+            {
+              "name": "Infantry Defence Bonus",
+              "bonus": [
+                1,
+                2,
+                3,
+                4,
+                5
+              ],
+              "type": "percent"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "3",
     "name": "Yi Seong-Gye",
     "title": "Bow of Revolution",
