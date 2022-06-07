@@ -44,7 +44,7 @@ import {
   UtilitiesModule,
 } from '@coreui/angular';
 
-import { IconModule, IconSetService } from '@coreui/icons-angular';
+import {IconModule, IconSetModule, IconSetService} from '@coreui/icons-angular';
 import {CommandersService} from "./services/commanders.service";
 import {HttpClientModule} from "@angular/common/http";
 
@@ -63,6 +63,8 @@ const APP_CONTAINERS = [
   imports: [
     BrowserModule,
     HttpClientModule,
+    IconModule,
+    IconSetModule.forRoot(),
     BrowserAnimationsModule,
     AppRoutingModule,
     AvatarModule,

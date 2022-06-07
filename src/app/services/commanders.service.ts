@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable} from "rxjs";
+import {Observable, Subject} from "rxjs";
 
 
 export interface Commander {
@@ -54,11 +54,25 @@ export interface SkillDetails {
   providedIn: 'root'
 })
 export class CommandersService {
-
+  commsSelected = new Subject<any>();
+  public comms: Commander[] = [];
   constructor(private http:HttpClient) { }
 
 
   getCommanders(): Observable<Commander[]> {
     return this.http.get<Commander[]>('/data/commanders.json')
   }
+
+  addCommader(comm: Commander) {
+    // @ts-ignore
+    this.commsSelected.next({comm: comm,add:false});
+    return true;
+  }
+  removeCommander(comm: Commander){
+   this.commsSelected.next({comm: comm,add:true});
+  }
+  isSelected(id: number){
+    return this.comms.find(x => x.id === id);
+  }
+
 }
