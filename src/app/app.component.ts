@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { IconSetService } from '@coreui/icons-angular';
 import { Title } from '@angular/platform-browser';
+import { IconSetService } from '@coreui/icons-angular';
+import {iconSubset} from "./icons/icon-subset";
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'body',
   template: '<router-outlet></router-outlet>',
+  providers: [IconSetService],
+
 })
 export class AppComponent implements OnInit {
   title = 'CoreUI Free Angular Admin Template';
@@ -18,8 +21,8 @@ export class AppComponent implements OnInit {
     private iconSetService: IconSetService
   ) {
     titleService.setTitle(this.title);
-    // iconSet singleton
-    //iconSetService.icons = { ...iconSubset };
+
+    iconSetService.icons = { ...iconSubset };
   }
 
   ngOnInit(): void {
