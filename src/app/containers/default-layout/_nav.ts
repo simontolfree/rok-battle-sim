@@ -11,6 +11,15 @@ export const navItems: INavData[] = [
     }
   },
   {
+    name: 'Battle Sim',
+    url: '/battle-sim',
+    iconComponent: { name: 'cil-speedometer' },
+    badge: {
+      color: 'info',
+      text: 'NEW'
+    }
+  },
+  {
     name: 'Components',
     title: true
   },

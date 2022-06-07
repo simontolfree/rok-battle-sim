@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "coreui-free-angular-admin-template": {
+    "rok-battle-sim": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/coreui-free-angular-admin-template",
+            "outputPath": "dist/rok-battle-sim",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -36,7 +36,9 @@
               "src/data"
             ],
             "styles": [
-              "src/scss/styles.scss"
+              "src/scss/styles.scss",
+              "node_modules/@coreui/coreui/dist/css/coreui.css",
+              "node_modules/@coreui/icons/css/all.css"
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
@@ -81,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "coreui-free-angular-admin-template:build:production"
+              "browserTarget": "rok-battle-sim:build:production"
             },
             "development": {
-              "browserTarget": "coreui-free-angular-admin-template:build:development"
+              "browserTarget": "rok-battle-sim:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,7 +94,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "coreui-free-angular-admin-template:build"
+            "browserTarget": "rok-battle-sim:build"
           }
         },
         "test": {
@@ -116,5 +118,5 @@
       }
     }
   },
-  "defaultProject": "coreui-free-angular-admin-template"
+  "defaultProject": "rok-battle-sim"
 }

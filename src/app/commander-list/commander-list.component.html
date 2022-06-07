@@ -1,0 +1,125 @@
+
+
+
+
+  <app-commander-details [commanderList$]="commandersList$"></app-commander-details>
+
+<button (click)="attack()">Simulate</button>
+<button (click)="reset()">Reset</button>
+<ng-template [ngIf]="battleLog !== ''">
+<div *ngFor="let turn of battleLog | async">
+  Turn: {{turn.turn}}
+  Your Troops Left: {{turn.troopsLeftHuman}}
+  AI Troops Left: {{turn.troopsLeftAI}}
+
+</div></ng-template>
+<h3>You</h3>
+  <div class="fw-bold"*ngIf="selectedComms.length >0  " [innerHTML]="selectedComms[0].name"> </div>
+  <div *ngIf="selectedComms.length == 2 " [innerHTML]="selectedComms[1].name"> </div>
+
+  <p class="fw-semibold">Troops</p>
+
+<c-progress class="mb-3">
+  <c-progress-bar [color]="getPercentClass(human)"  [value]="human.troops" [max]="human.startingTroops">{{human.troops}}</c-progress-bar>
+</c-progress>
+<p class="fw-semibold">Rage</p>
+{{human.rage}}
+<c-progress class="mb-3" thin >
+  <c-progress-bar [color]="(human.proc)  ? 'danger' : 'info'"  [value]="human.rage" [max]="1000"></c-progress-bar>
+</c-progress>
+
+<h3>Opposition</h3>
+
+  <p class="fw-semibold">Troops</p>
+<c-progress class="mb-3">
+  <c-progress-bar [color]="getPercentClass(AI)"  [value]="AI.troops" [max]="AI.startingTroops">{{AI.troops}}</c-progress-bar>
+</c-progress>
+<p class="fw-semibold">Rage</p>
+
+<c-progress class="mb-3" thin >
+  <c-progress-bar  [color]="(AI.proc)  ? 'danger' : 'info'"  [value]="AI.rage" [max]="1000"></c-progress-bar>
+</c-progress>
+<div *ngIf="human.proc">Human Rage Hit</div>
+<div *ngIf="AI.proc">AI Rage Hit</div>
+
+
+
+
+
+<c-row>
+  <c-col xs>
+    <c-card class="mb-4">
+      <c-card-header>Commanders</c-card-header>
+      <c-card-body>
+        <table
+          [hover]="true"
+          [responsive]="true"
+          [striped]="true"
+          align="middle"
+          cTable
+          class="mb-0 border"
+        >
+          <thead cTableColor="light">
+          <tr>
+            <th class="text-center">
+              <!--
+                            <svg cIcon name="cilPeople"></svg>
+              -->
+            </th>
+            <th>Name</th>
+            <th>Talents</th>
+            <th>Active Skill</th>
+            <th>Passive Skills</th>
+
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let user of commandersList$ | async">
+            <td class="text-center">
+              <c-avatar
+                size="md"
+                src="assets/images/commanders/{{ user.name }}.png"
+                status="{{ user.red }}"
+              ></c-avatar>
+            </td>
+            <td>
+              <div>{{ user.name }}</div>
+              <div class="small"> {{user.title}}</div>
+
+            </td>
+            <td>
+              <strong>{{ user.commanderType.red }}</strong><br>
+              <strong>{{ user.commanderType.blue }}</strong><br>
+              <strong>{{ user.commanderType.yellow }}</strong>
+            </td>
+            <td>
+              <strong>{{ user.commanderTalents.activeSkill.name}}</strong><br>
+              <span class="text-danger">{{ user.commanderTalents.activeSkill.rageRequirement}}</span><br>
+              {{ user.commanderTalents.activeSkill.text}}<br>
+              <div *ngFor="let skill of user.commanderTalents.activeSkill.upgrade">{{skill.name}} <span
+                *ngFor="let bonus of skill.bonus"> {{bonus}}</span> <br></div>
+
+
+            </td>
+            <td>
+              <ng-container *ngFor="let passiveSkill of user.commanderTalents.passiveSkills">
+                <strong>{{ passiveSkill.name}}</strong><br>
+                {{ passiveSkill.text}}<br>
+                <div *ngFor="let skill of passiveSkill.upgrade">{{skill.name}} <span
+                  *ngFor="let bonus of skill.bonus"> {{bonus}}</span> <br></div>
+
+              </ng-container>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </c-card-body>
+    </c-card>
+  </c-col>
+</c-row>
+
+<!--
+<app-widgets-dropdown>
+
+</app-widgets-dropdown>
+-->

@@ -38,7 +38,7 @@
 }
 
 .c {
-  grid-column: col / span 2;
+  grid-column: col 1;
   grid-row: row 2;
 }
 
@@ -69,7 +69,7 @@
 .wrapper2 {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, [col] 300px ) ;
+  grid-template-columns: repeat(3, [col] 300px ) ;
   grid-template-rows: repeat(2, [row] auto  );
 
 }
@@ -79,3 +79,5 @@
   border-radius: 5px;
   padding: 20px;
 }
+
+

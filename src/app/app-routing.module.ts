@@ -1,11 +1,11 @@
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { Page500Component } from './pages/page500/page500.component';
+import { Page404Component } from './pages/page404/page404.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
-import { Page404Component } from './views/pages/page404/page404.component';
-import { Page500Component } from './views/pages/page500/page500.component';
-import { LoginComponent } from './views/pages/login/login.component';
-import { RegisterComponent } from './views/pages/register/register.component';
 
 const routes: Routes = [
   {
@@ -21,34 +21,19 @@ const routes: Routes = [
     },
     children: [
       {
-        path: 'dashboard',
-        loadChildren: () =>
-          import('./views/dashboard/dashboard.module').then((m) => m.DashboardModule)
-      },
-      {
         path: 'commander-list',
         loadChildren: () =>
-          import('./views/commander-list/commander-list.module').then((m) => m.CommanderListModule)
+          import('./commander-list/commander-list.module').then((m) => m.CommanderListModule)
       },
       {
-        path: 'theme',
+        path: 'battle-sim',
         loadChildren: () =>
-          import('./views/theme/theme.module').then((m) => m.ThemeModule)
-      },
-      {
-        path: 'charts',
-        loadChildren: () =>
-          import('./views/charts/charts.module').then((m) => m.ChartsModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () =>
-          import('./views/widgets/widgets.module').then((m) => m.WidgetsModule)
+          import('./battle-sim/battle-sim.module').then((m) => m.BattleSimComponentModule)
       },
       {
         path: 'pages',
         loadChildren: () =>
-          import('./views/pages/pages.module').then((m) => m.PagesModule)
+          import('./pages/pages.module').then((m) => m.PagesModule)
       },
     ]
   },

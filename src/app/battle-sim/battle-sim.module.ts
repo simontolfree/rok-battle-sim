@@ -1,3 +1,4 @@
+import { CommanderDetailsModule } from './../commander-list/commander-details/commander-details.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -14,20 +15,18 @@ import {
   TableModule,
   TabsModule
 } from '@coreui/angular';
-import { IconModule } from '@coreui/icons-angular';
 import { ChartjsModule } from '@coreui/angular-chartjs';
-
-
-import { WidgetsModule } from '../widgets/widgets.module';
-import {CommanderListComponent} from "./commander-list.component";
-import {CommanderListRoutingModule} from "./commander-list-routing.module";
+import { WidgetsModule } from '../shared/widgets/widgets.module';
+import {BattleSimComponent} from "./battle-sim.component";
+import { BattleSimComponentRoutingModule } from './battle-sim-routing.module';
+import { CommanderDetailsComponent } from '../commander-list/commander-details/commander-details.component';
 
 @NgModule({
   imports: [
-    CommanderListRoutingModule,
+    BattleSimComponentRoutingModule,
+    CommanderDetailsModule,
     CardModule,
     NavModule,
-    IconModule,
     TabsModule,
     CommonModule,
     GridModule,
@@ -43,7 +42,7 @@ import {CommanderListRoutingModule} from "./commander-list-routing.module";
     WidgetsModule,
     FormsModule
   ],
-  declarations: [CommanderListComponent]
+  declarations: [BattleSimComponent]
 })
-export class CommanderListModule {
+export class BattleSimComponentModule {
 }
