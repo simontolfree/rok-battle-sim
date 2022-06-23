@@ -119,21 +119,18 @@ export class BattleSimComponent implements OnInit {
       this.killTroops();
       this.turnCount++;
       this.battleLog.push({turn: this.turnCount, troopsLeftHuman: this.human.troops, troopsLeftAI: this.AI.troops});
-      //this.attack();
+
       await new Promise<void>(r => setTimeout(() => r(), 1000));
       await this.attack();
 
     }
     this.turnCount = 0;
-    //  console.log("HUMAN",this.human);
-    //  console.log("AI",this.AI);
-
 
   }
   reset(){
     this.human.troops=10000;
     this.AI.troops=10000;
-    //this.battleLog=[];
+
 
   }
   calculateDF(simYou: Battle, simOpp:Battle){
